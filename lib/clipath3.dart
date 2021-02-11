@@ -21,11 +21,20 @@ class Clipath3 extends StatelessWidget {
 class MyClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
+    var rounded = 50.0;
     // TODO: implement getClip
     Path path = Path();
-    path.lineTo(0, size.height);
-    path.lineTo(size.width, size.height);
-    path.lineTo(size.width, 0);
+    path.moveTo(0, size.height*0.43);
+    path.lineTo(0, size.height - 50);
+    path.quadraticBezierTo(0, size.height, rounded,size.height);
+
+    path.lineTo(size.width-rounded, size.height);
+    path.quadraticBezierTo(size.width, size.height, size.width,size.height-rounded);
+    path.lineTo(size.width,  rounded*2);
+    path.quadraticBezierTo(size.width, 0, size.width-rounded *3, rounded*2);
+    path.lineTo(rounded, size.height*0.40);
+    path.quadraticBezierTo(0, size.height*0.38 + rounded, 0, size.height*0.43+rounded*2);
+
 
     return path;
   }

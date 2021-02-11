@@ -5,6 +5,7 @@ import 'package:bottomnavybar/clipath2.dart';
 import 'package:flutter/material.dart';
 
 import 'clipath3.dart';
+import 'clipath3.dart';
 
 void main() {
   runApp(MyApp());
